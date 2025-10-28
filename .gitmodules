@@ -1,0 +1,6 @@
+[submodule "client"]
+	path = client
+	url = https://github.com/ashish-sng/PDF-RAG-CLIENT
+[submodule "server"]
+	path = server
+	url = https://github.com/ashish-sng/PDF-RAG-SERVER
