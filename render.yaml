@@ -3,7 +3,6 @@ services:
     name: pdf-rag-client
     env: docker
     dockerfilePath: ./client/Dockerfile
-    buildContext: ./client
     plan: free
     envVars:
       - key: NEXT_PUBLIC_API_URL
@@ -14,7 +13,6 @@ services:
     name: pdf-rag-server
     env: docker
     dockerfilePath: ./server/Dockerfile
-    buildContext: ./server
     plan: free
     envVars:
       - key: API_KEY
