@@ -25,16 +25,18 @@ services:
         value: 6379
     autoDeploy: true
 
-  - type: private
+  - type: web
     name: qdrant
     env: docker
-    dockerCommand: qdrant/qdrant
+    dockerfilePath: ./docker/qdrant.Dockerfile
     plan: free
-    autoDeploy: true
+    autoDeploy: false
+    envVars: []
 
-  - type: private
+  - type: web
     name: valkey
     env: docker
-    dockerCommand: valkey/valkey
+    dockerfilePath: ./docker/valkey.Dockerfile
     plan: free
-    autoDeploy: true
+    autoDeploy: false
+    envVars: []
