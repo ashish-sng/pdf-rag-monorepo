@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: pdf-rag-client
+    env: docker
+    dockerfilePath: ./client/Dockerfile
+    plan: free
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://pdf-rag-server.onrender.com
+    autoDeploy: true
+
+  - type: web
+    name: pdf-rag-server
+    env: docker
+    dockerfilePath: ./server/Dockerfile
+    plan: free
+    envVars:
+      - key: API_KEY
+        sync: false
+      - key: QDRANT_URL
+        value: http://qdrant:6333
+      - key: REDIS_HOST
+        value: valkey
+      - key: REDIS_PORT
+        value: 6379
+    autoDeploy: true
+
+  - type: private
+    name: qdrant
+    env: docker
+    dockerCommand: qdrant/qdrant
+    plan: free
+    autoDeploy: true
+
+  - type: private
+    name: valkey
+    env: docker
+    dockerCommand: valkey/valkey
+    plan: free
+    autoDeploy: true
