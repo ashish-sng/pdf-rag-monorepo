@@ -26,12 +26,14 @@ Vector-based document retrieval with Qdrant.
 
 🧰 Folder Structure
 
-pdf-rag/
+<pre>
+pdf-rag/ 
 ├── client/ # Frontend (Next.js + Clerk)
 ├── server/ # Backend (Express + LangChain + OpenAI)
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
+</pre>
 
 ## 🧩 Architecture Overview
 
